@@ -1,0 +1,63 @@
+:root {
+    --infoFont: min(2vw, 2vh);
+    --infoSize: max(8, var(--infoFont));
+}
+.info-screen {
+    position: relative;
+    max-width: min(90vw, 120vh);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: min(4vw, 2.5vh);
+}
+.info-screen > img {
+    width: min(47.5vw, 47.5vh);
+    max-width: 60vw;
+    margin: 1em;
+}
+.info-screen > h3 {
+    font-size: 0.9em;
+    opacity: 0.9;
+    text-align: center;
+    margin: 0 1.5em 1em;
+}
+.info-screen > ul {
+    opacity: 0.9;
+    font-size: 0.85em;
+    list-style-type: circle;
+    width: 70%;
+}
+.legal {
+    font-size: 0.9em;
+    opacity: 0.8;
+    max-width: 80%;
+    text-align: center;
+    margin: 1em 0 2em;
+}
+.legal > h4 {
+    font-variant: small-caps;
+}
+.legal > p {
+    font-size: 0.75em;
+    margin: 0.25em 0;
+}
+.info-screen > button {
+    box-sizing: border-box;
+    border: solid 0.1em #8b6e81;
+    background-color: #fcf6fa;
+    color: #8b6e81;
+    padding: 0.2em 0.6em;
+    border-radius: 0.2em;
+    height: 2em;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+.info-screen > button:hover {
+    color: #715b69;
+    border-color: #715b69;
+    background-color: #aba6aa;
+    cursor: pointer;
+}

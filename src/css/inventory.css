@@ -1,0 +1,66 @@
+.inventory-container {
+    font-size: min(3.8vw, 3vh);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 95vw;
+    border-left: solid #ce9cc7 0.2em;
+    border-right: solid #ce9cc7 0.2em;
+    background-color: #f9eaf3;
+    flex: 1;
+}
+.inventory-container header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.stats-container {
+    background-color: white;
+    border: inset #ce9cc7 0.05em;
+    border-radius: 0.5em;
+    margin: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stats-container h1 {
+    font-size: 1em;
+    opacity: 0.6;
+    font-variant: small-caps;
+    text-align: center;
+    margin: auto;
+}
+.stats {
+    margin: 1em;
+    font-size: 0.9em;
+}
+.stats td {
+    text-align: right;
+    padding-right: 0.5em;
+}
+.stats tr :nth-child(2){
+    text-align: left;
+    padding-left: 0.5em;
+}
+.inventory-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inventory {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0.25em;
+}
+.inventory img {
+    width: min(27vw, 18vh);
+    margin: 0.2em;
+}
+.inventory img.clickable:hover {
+    cursor: help;
+}
+
+
+

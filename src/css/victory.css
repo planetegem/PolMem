@@ -1,0 +1,145 @@
+/* VICTORY SCREEN */
+.victory-screen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    font-size: min(3vw, 3vh);
+}
+.summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    text-align: center;
+    z-index: 5;
+    position: absolute;
+    top: -0.2em; left: 0; right: 0;
+    margin: auto;
+    border-top: solid #ce9cc7 0.2em;
+    background-image: linear-gradient(to right,#f7cfe7, 10%, #f9eaf3 12.5% 87.5%, 90%, #f7cfe7);
+}
+.summary img {
+    width: min(65vw, 65vh);
+    margin-bottom: -3em;
+    margin-top: -3em;
+}
+.summary-text, .summary-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.summary-text h2 {
+    font-size: 1.5em;
+    font-variant: small-caps;
+    text-shadow:
+        0.05em 0.05em 0 #ce9cc795,
+        -0.05em -0.05em 0 #ce9cc795,  
+        0.05em -0.05em 0 #ce9cc795,
+        -0.05em 0.05em 0 #ce9cc795,
+        0.05em 0.05em 0 #ce9cc795;
+    margin: 0.6em;
+}
+.summary-text h3 {
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+.variable-score {
+    text-shadow:
+        0.05em 0.05em 0 #ce9cc795,
+        -0.05em -0.05em 0 #ce9cc795,  
+        0.05em -0.05em 0 #ce9cc795,
+        -0.05em 0.05em 0 #ce9cc795,
+        0.05em 0.05em 0 #ce9cc795;
+}
+.summary-text {
+    margin-top: -1em;
+}
+.summary-buttons {
+    margin: 2em;
+    font-size: 1.1em;
+}
+.summary-buttons span {
+    font-size: 0.8;
+    margin: -0.1em;
+    opacity: 0.6;
+}
+.game-recap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+    position: absolute;
+    top: -0.2em; left: 0; right: 0;
+    margin: auto;
+    background-image: linear-gradient(to right,#f9eaf3, 10%, white 12.5% 87.5%, 90%, #f9eaf3);
+    border-top: solid #ce9cc7 0.2em;
+}
+.score-card {
+    width: min(95vw, 95vh);
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    font-size: min(3vw, 3vh);
+    padding: 0.75em;
+}
+.score-card.reversed {
+    flex-direction: row-reverse;
+}
+.score-card > img {
+    width: min(30vw, 30vh);
+    margin: 0.25em;
+}
+.score-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.score-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.score-details h3 {
+    font-variant: small-caps;
+    font-size: 1.05em;
+
+}
+.score-details h4 {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+.score-details p {
+    font-size: 0.9em;
+    margin: 0.8em;
+}
+.time {
+    font-size: 0.95em;
+    opacity: 0.75;
+}
+.time > p {
+    margin: 0;
+}
+.divider {
+    width: 60%;
+    height: 0;
+    border-bottom: solid black 1px;
+    opacity: 0.4;
+}
+.game-recap .button {
+    font-size: 1.5em;
+    margin: 2em;
+}
+.gone {
+    opacity: 0;
+    animation: evaporate 0.2s linear;
+}
+@keyframes evaporate {
+    0% {opacity: 0.6}
+    100% {opacity: 0}
+}
