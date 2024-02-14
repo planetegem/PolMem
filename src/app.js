@@ -121,9 +121,15 @@ export default function App(){
             const promises = await images.map((image) => {
                 return new Promise(function(resolve, reject){
                     const img = new Image();
+                    img.onload = () => {
+                        console.log("Loaded " + img.src);
+                        resolve(img);
+                    }
+                    img.onerror = () => {
+                        console.log("Failed to load " + img.src);
+                        reject();
+                    }
                     img.src = image;
-                    img.onload = resolve();
-                    img.onerror = reject();
                 });
             });
             await Promise.all(promises);
@@ -374,17 +380,20 @@ export default function App(){
 
                 } else { // Else: clear memory, turn cards & consider starting event
                     setTimeout(() => {
-                        left.isTurned = false;
-                        right.isTurned = false;
+                        // Turn all cards as quickfix for double render bug (real fix: clean up code and limit amount of renders by compartimentalizing)
+                        board.current.map((card) => {
+                            if (card.isTurned && card.inPlay){
+                                card.isTurned = false;
+                            }
+                            return card;
+                        });
                         card1.current = null;
                         card2.current = null;
 
                         let runEvent = considerEvent();
                         if (runEvent){
-                            setTimeout(() => {
-                                event.current.type = "event";
-                                setRender(render + 1);
-                            }, 400);
+                            event.current.type = "event";
+                            setRender(render + 1);
                         } else {
                             interactionAllowed.current = true;
                         }
@@ -393,7 +402,10 @@ export default function App(){
                     return;
                 }
             }
-            interactionAllowed.current = true;
+            setTimeout(() => {
+                interactionAllowed.current = true;
+                setRender(render + 1);
+            }, 200);
         }
     }
     checkMemory();
