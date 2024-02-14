@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+This new version of Political Memory was made as an excuse to test ReactJS.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Gameplay:
+As before, the objective of the game is to eliminate politicians from the Belgian political landscape by matching them together in a game of memory. Added to this is a system of random events: everytime you incorrectly match a politician, a dice roll is done to determine if a random event can fire. Every event has its own probability and conditions of firing (i.e. is a politician in game? Has a politician been revealed? Has a politician been Eliminated?).
 
-## Available Scripts
+Execution:
+- The main app.js component keeps track of arrays containing events, cards & memory slots.
+- Card descriptions and event rules are stored in seperate files (under assets): these are loaded into the main app component.
+- Data from the app component is drilled to the board component. This component then generates cards on the screen. This is also where the eventbuilder component lives.
+- All interaction is handled through the clickhandler method in the app component.
+- Game progress is saved in localStorage
 
-In the project directory, you can run:
+Conclusion:
+I'm not entirely happy with how this game turned out, but it was a valuable in experience to get to know ReactJS. There are still some bugs and the game is running far from efficiently, but it runs anyway. The game needs some serious refactoring: there are just to many variables running around. I should also have made more use of objects kept in memory to localize data. However, I'm not inclined to continue working on this project: I can see ReactJS being useful to create simple websites or webapplications, but it's just too unwieldy for use in webgames. It becomes a constant struggle to check which component has which data exactly, as they aren't always updated at the same time.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
